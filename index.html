@@ -198,6 +198,8 @@ button{user-select:none;-webkit-user-select:none}
 @media(prefers-reduced-motion:reduce){.beauty-muse,.deal-hero-image,.hero-backdrop::after{animation:none!important}}
 
 </style>
+  <link rel="stylesheet" href="./v6.css">
+  <script defer src="./v6.js"></script>
   
   
 </head>
@@ -211,16 +213,18 @@ button{user-select:none;-webkit-user-select:none}
     <a class="logo" href="#top" aria-label="AVELUNE — главная">AVE<span>LUNE</span><sup>✦</sup></a>
     <nav class="desktop-nav" aria-label="Главное меню">
       <a href="#deals">Скидки</a>
+      <a href="#finder">Подбор</a>
       <a href="#catalog">Каталог</a>
       <a href="#how">Как работает</a>
     </nav>
     <div class="nav-actions">
       <button class="nav-icon" id="go-search" type="button" aria-label="Открыть поиск"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.8" cy="10.8" r="7"/><path d="m16 16 5 5"/></svg></button>
+      <button class="nav-icon motion-toggle" id="motion-toggle" type="button" aria-label="Отключить анимации" aria-pressed="false" title="Включить или отключить анимации"><span id="motion-icon">✧</span></button>
       <button class="nav-icon theme-toggle" id="theme-toggle" type="button" aria-label="Включить светлую тему" title="Переключить тему"><span id="theme-icon">☀</span></button>
       <button class="nav-icon fav-nav" id="favorites-top" type="button" aria-label="Избранное"><span class="heart-line">♡</span><span id="favorites-count">0</span></button>
       <button class="nav-icon mobile-menu" id="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span>☰</span></button>
     </div>
-    <div class="mobile-nav" id="mobile-nav" hidden><a href="#deals">Скидки <span>↗</span></a><a href="#catalog">Каталог <span>↗</span></a><a href="#collections">Категории <span>↗</span></a><a href="#how">Как работает <span>↗</span></a><button id="mobile-theme" type="button">Сменить тему <span>◐</span></button></div>
+    <div class="mobile-nav" id="mobile-nav" hidden><a href="#deals">Скидки <span>↗</span></a><a href="#finder">Подбор косметики <span>↗</span></a><a href="#catalog">Каталог <span>↗</span></a><a href="#collections">Категории <span>↗</span></a><a href="#how">Как работает <span>↗</span></a><button id="mobile-theme" type="button">Сменить тему <span>◐</span></button></div>
   </header>
   <main>
     <section class="hero" aria-labelledby="hero-title">
@@ -241,7 +245,44 @@ button{user-select:none;-webkit-user-select:none}
       <div class="hero-bottom wrap"><span>SCROLL TO EXPLORE <span class="scroll-arrow">↓</span></span><span>001 — THE BEAUTY SEARCH ENGINE</span></div>
     </section>
     <section class="deals-shell" id="deals"><div class="wrap"><div class="deals-title"><div><span class="section-kicker">[ 01 / HOT DEALS ]</span><h2>Сначала <em>выгода.</em></h2><p>Главная витрина beauty-находок. Весь каталог теперь открывается отдельно.</p></div><button class="deal-button deal-catalog" id="open-full-catalog" type="button">Весь каталог ↗</button></div><p class="deal-disclaimer">✳ Все цены, проценты скидок и наличие здесь вымышленные. Реальные акции подключим через партнёрские фиды.</p><div class="deal-layout"><article class="deal-lead"><div class="deal-lead-copy"><span class="deal-label">✦ BEAUTY HOT DEALS · ДЕМО</span><h3>Niacinamide 10% + Zinc 1%</h3><p>THE ORDINARY · Сыворотка для лица</p><b class="deal-percent">−26% <small>ДЕМО</small></b><div class="deal-figures"><strong>950 ₽</strong><del>1 290 ₽</del></div><button data-open="niacinamide" type="button" class="deal-button">Сравнить цены ↗</button></div><img class="deal-hero-image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NDAgNDMwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9ItCY0LvQu9GO0YHRgtGA0LDRhtC40Y8g0YPQv9Cw0LrQvtCy0LrQuCBUSEUgT1JESU5BUlkgTklBQ0lOQU1JREUiPjxkZWZzPjxyYWRpYWxHcmFkaWVudCBpZD0ibGlnaHQiIGN4PSI1MiUiIGN5PSIzNSUiIHI9IjY1JSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRkZGRkZGIiBzdG9wLW9wYWNpdHk9Ii40NCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0ZGRkZGRiIgc3RvcC1vcGFjaXR5PSIwIi8+PC9yYWRpYWxHcmFkaWVudD48ZmlsdGVyIGlkPSJzaGFkb3ciIHg9Ii01MCUiIHk9Ii01MCUiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiPjxmZURyb3BTaGFkb3cgZHg9IjYiIGR5PSIxMCIgc3RkRGV2aWF0aW9uPSI5IiBmbG9vZC1jb2xvcj0iIzUyNDIzQiIgZmxvb2Qtb3BhY2l0eT0iLjE2Ii8+PC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSI1NDAiIGhlaWdodD0iNDMwIiByeD0iMjYiIGZpbGw9IiNFNkU0REYiLz48Y2lyY2xlIGN4PSIxMTAiIGN5PSI5NiIgcj0iMTYwIiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIuMTMiLz48Y2lyY2xlIGN4PSI0NjIiIGN5PSIzNDAiIHI9IjE2MCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iLjIiLz48cmVjdCB3aWR0aD0iNTQwIiBoZWlnaHQ9IjQzMCIgZmlsbD0idXJsKCNsaWdodCkiLz48ZWxsaXBzZSBjeD0iMjcwIiBjeT0iMzgzIiByeD0iMTA1IiByeT0iMTIiIGZpbGw9IiM2QzUxNDgiIG9wYWNpdHk9Ii4xMCIvPjxnIGZpbHRlcj0idXJsKCNzaGFkb3cpIj48cmVjdCB4PSIyNDgiIHk9IjU4IiB3aWR0aD0iNDQiIGhlaWdodD0iNjIiIHJ4PSI4IiBmaWxsPSIjM0MzQTM3Ii8+PHJlY3QgeD0iMjU0IiB5PSIxMDYiIHdpZHRoPSIzMiIgaGVpZ2h0PSIyNyIgcng9IjIiIGZpbGw9IiNEMUM1QjgiLz48cmVjdCB4PSIyMTQiIHk9IjEyNyIgd2lkdGg9IjExMiIgaGVpZ2h0PSIyMjIiIHJ4PSIxMyIgZmlsbD0iI0Y2RjRFRSIgc3Ryb2tlPSIjQ0FDNkMwIi8+PHJlY3QgeD0iMjE0IiB5PSIxNzciIHdpZHRoPSIxMTIiIGhlaWdodD0iMTQwIiBmaWxsPSIjRkRGREZDIi8+PHBhdGggZD0iTTIzMSAxMjUgSDMwOSIgc3Ryb2tlPSJ3aGl0ZSIgb3BhY2l0eT0iLjciLz48L2c+PHRleHQgeD0iMjcwIiB5PSIyMTkiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgbGV0dGVyLXNwYWNpbmc9Ii4zIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMzIzMTJFIj5USEUgT1JESU5BUlk8L3RleHQ+PHRleHQgeD0iMjcwIiB5PSIyNDYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSIxLjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMzMjMxMkUiPk5JQUNJTkFNSURFPC90ZXh0Pjx0ZXh0IHg9IjI3MCIgeT0iMjY1IiBmb250LXNpemU9IjguNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjEiIGZpbGw9IiMzMjMxMkUiPjEwJSArIFpJTkMgMSU8L3RleHQ+PHRleHQgeD0iMjcwIiB5PSIyOTIiIGZvbnQtc2l6ZT0iNy41IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIxLjUiIGZpbGw9IiMzMjMxMkUiIG9wYWNpdHk9Ii42NSI+QkVBVVRZIENBUkU8L3RleHQ+PC9zdmc+" alt="Niacinamide 10% + Zinc 1%"></article><div class="deal-grid"><article class="deal-mini"><div><small>BEAUTY OF JOSEON</small><span class="deal-percent">−24% ДЕМО</span></div><h3>Relief Sun SPF50+</h3><p>Солнцезащитный крем</p><div class="deal-mini-prices"><div><del>1 690 ₽</del><strong>1 290 ₽</strong></div><button type="button" data-open="relief-sun" aria-label="Сравнить Relief Sun SPF50+">↗</button></div></article><article class="deal-mini"><div><small>MAYBELLINE NEW YORK</small><span class="deal-percent">−23% ДЕМО</span></div><h3>Lash Sensational Sky High</h3><p>Удлиняющая тушь для ресниц</p><div class="deal-mini-prices"><div><del>990 ₽</del><strong>760 ₽</strong></div><button type="button" data-open="sky-high" aria-label="Сравнить Lash Sensational Sky High">↗</button></div></article><article class="deal-mini"><div><small>COSRX</small><span class="deal-percent">−22% ДЕМО</span></div><h3>Advanced Snail 96 Mucin</h3><p>Восстанавливающая эссенция</p><div class="deal-mini-prices"><div><del>1 790 ₽</del><strong>1 390 ₽</strong></div><button type="button" data-open="snail" aria-label="Сравнить Advanced Snail 96 Mucin">↗</button></div></article><article class="deal-mini"><div><small>YVES SAINT LAURENT</small><span class="deal-percent">−21% ДЕМО</span></div><h3>Libre Eau de Parfum</h3><p>Парфюмерная вода</p><div class="deal-mini-prices"><div><del>9 990 ₽</del><strong>7 900 ₽</strong></div><button type="button" data-open="libre" aria-label="Сравнить Libre Eau de Parfum">↗</button></div></article></div></div></div></section>
-<section class="intro wrap" id="how"><div><span class="section-kicker">[ 01 / ПОЧЕМУ AVELUNE ]</span><h2>Один поиск.<br/><em>Много возможностей.</em></h2></div><p>Мы хотим, чтобы поиск идеального средства был таким же приятным, как сама покупка. Все предложения — на одном экране.</p></section>
+<section id="finder" class="finder-section" aria-labelledby="finder-title">
+ <div class="wrap finder-wrap">
+  <div class="finder-heading"><span class="section-kicker">[ 02 / BEAUTY FINDER ]</span>
+   <h2 id="finder-title">Найди <em>свою формулу.</em></h2>
+   <p>Два быстрых выбора — и AVELUNE покажет подходящие средства из каталога. Без регистрации.</p>
+  </div>
+  <div class="finder-console">
+   <div class="finder-topline"><span>✦ AVELUNE BEAUTY LAB</span><span id="finder-counter" aria-live="polite">ШАГ 01 / 02</span></div>
+   <div class="finder-glow finder-glow-one" aria-hidden="true"></div><div class="finder-glow finder-glow-two" aria-hidden="true"></div>
+   <div class="finder-step" id="finder-step-goal">
+    <h3>Что будем подбирать?</h3><p>Выбери направление — от ухода до ароматов.</p>
+    <div class="finder-choices" role="group" aria-label="Выбор типа косметики">
+     <button type="button" class="finder-choice" data-finder-goal="Уход за лицом"><span>✿</span><strong>Уход за лицом</strong><small>Сыворотки, кремы, очищение</small></button>
+     <button type="button" class="finder-choice" data-finder-goal="Макияж"><span>✧</span><strong>Макияж</strong><small>Тушь, губы и оттенки</small></button>
+     <button type="button" class="finder-choice" data-finder-goal="SPF"><span>☼</span><strong>Защита SPF</strong><small>Средства с SPF</small></button>
+     <button type="button" class="finder-choice" data-finder-goal="Уход за волосами"><span>❀</span><strong>Для волос</strong><small>Масла и восстановление</small></button>
+     <button type="button" class="finder-choice" data-finder-goal="Парфюмерия"><span>♢</span><strong>Парфюмерия</strong><small>Ароматы на каждый день</small></button>
+    </div>
+   </div>
+   <div class="finder-step" id="finder-step-budget" hidden>
+    <button type="button" id="finder-step-back" class="finder-back">← Изменить категорию</button>
+    <h3>Какой бюджет комфортен?</h3><p>Посмотрим предложения, которые укладываются в сумму.</p>
+    <div class="finder-budgets" role="group" aria-label="Выбор бюджета">
+     <button type="button" data-finder-budget="1500">До 1 500 ₽ <span>↗</span></button>
+     <button type="button" data-finder-budget="3000">До 3 000 ₽ <span>↗</span></button>
+     <button type="button" data-finder-budget="0">Любой бюджет <span>↗</span></button>
+    </div>
+   </div>
+   <div class="finder-step" id="finder-step-results" hidden>
+    <div class="finder-result-header"><div><span class="finder-found-label">✳ ПЕРСОНАЛЬНАЯ ПОДБОРКА</span><h3>Нашли кое-что для тебя</h3><p id="finder-result-summary"></p></div><button type="button" id="finder-again" class="finder-back">↻ Начать заново</button></div>
+    <div class="finder-results" id="finder-results" aria-live="polite"></div>
+    <button type="button" class="finder-all" id="finder-show-catalog">Перейти в полный каталог ↗</button>
+   </div>
+   <div class="finder-bottom"><span>BEAUTY, BUT SMARTER.</span><span>Демо-подбор, без медицинских рекомендаций</span></div>
+  </div>
+ </div>
+</section>
+    <section class="intro wrap" id="how"><div><span class="section-kicker">[ 01 / ПОЧЕМУ AVELUNE ]</span><h2>Один поиск.<br/><em>Много возможностей.</em></h2></div><p>Мы хотим, чтобы поиск идеального средства был таким же приятным, как сама покупка. Все предложения — на одном экране.</p></section>
     <section class="feature-bento wrap" aria-label="Преимущества">
       <article class="feature-panel feat-major"><span class="feature-index">01 / УМНЫЙ ПОИСК</span><div class="feature-graphic"><div class="graphic-search"><span>⌕</span> COSRX Advanced Snail <i>↗</i></div><div class="graphic-tags"><span>Skincare</span><span>SPF50+</span><span>Niacinamide</span></div></div><div class="feature-info"><h3>Все средства.<br/>Одно место.</h3><p>Бренды, названия и категории — ищи так, как удобно тебе.</p></div></article>
       <article class="feature-panel feat-glow"><span class="feature-index">02 / СРАВНЕНИЕ ЦЕН</span><div class="percent-art">−<b>₽</b><span>↘</span></div><div class="feature-info"><h3>Выбирай выгоднее.</h3><p>Цены магазинов рядом, чтобы не открывать десятки вкладок.</p></div></article>
@@ -280,9 +321,9 @@ button{user-select:none;-webkit-user-select:none}
     </div></section>
     <section class="editorial wrap"><div class="editorial-bg"></div><span class="section-kicker">[ BEAUTY IS YOURS ]</span><div class="editorial-body"><div><h2>Меньше поисков.<br/><em>Больше красоты.</em></h2><p>Мы только начинаем. Сегодня — работающий каталог-прототип. Следующий шаг — реальные предложения, история цен и новые бренды.</p><button id="editorial-button" class="btn-light" type="button">Вернуться к поиску <span>↗</span></button></div><span class="editorial-symbol" aria-hidden="true">✳</span></div></section>
   </main>
-  <footer class="footer wrap"><div><a class="logo footer-logo" href="#top">AVE<span>LUNE</span><sup>✦</sup></a><p>Beauty, but smarter. Сделано с любовью к деталям.</p></div><div><span>НАВИГАЦИЯ</span><a href="#catalog">Каталог</a><a href="#collections">Категории</a><a href="#how">О проекте</a></div><div><span>О ПРОЕКТЕ</span><p>© 2026 AVELUNE</p><p>Бета-версия · Не интернет-магазин</p><p>Демо-цены вымышлены; импортированные фиды могут устаревать</p></div></footer>
+  <footer class="footer wrap"><div><a class="logo footer-logo" href="#top">AVE<span>LUNE</span><sup>✦</sup></a><p>Beauty, but smarter. Сделано с любовью к деталям.</p></div><div><span>НАВИГАЦИЯ</span><a href="#catalog">Каталог</a><a href="#finder">Подбор</a><a href="#collections">Категории</a><a href="#how">О проекте</a></div><div><span>О ПРОЕКТЕ</span><p>© 2026 AVELUNE</p><p>Бета-версия · Не интернет-магазин</p><p>Демо-цены вымышлены; импортированные фиды могут устаревать</p></div></footer>
   <div class="compare-tray" id="compare-tray" hidden><div class="compare-copy"><span>✳ &nbsp; BEAUTY MATCH</span><strong id="compare-count">0 из 3 средств</strong><small>Выбери 2–3 товара для сравнения</small></div><div class="compare-images" id="compare-images"></div><button type="button" id="compare-open" class="compare-action">Сравнить ↗</button><button type="button" id="compare-clear" class="compare-clear" aria-label="Очистить сравнение">×</button></div>
-  <nav class="bottom-nav" aria-label="Быстрая навигация"><button type="button" data-bottom="top"><span>⌂</span><small>Главная</small></button><button type="button" data-bottom="catalog"><span>⌕</span><small>Поиск</small></button><button type="button" data-bottom="favorite"><span>♡</span><small>Избранное</small></button><button type="button" data-bottom="compare"><span>◇</span><small>Сравнить</small></button></nav>
+  <nav class="bottom-nav" aria-label="Быстрая навигация"><button type="button" data-bottom="top"><span>⌂</span><small>Главная</small></button><button type="button" data-bottom="deals"><span>✦</span><small>Скидки</small></button><button type="button" data-bottom="catalog"><span>⌕</span><small>Поиск</small></button><button type="button" data-bottom="favorite"><span>♡</span><small>Избранное</small></button><button type="button" data-bottom="compare"><span>◇</span><small>Сравнить</small></button></nav>
   <div id="modal-root"></div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
@@ -904,8 +945,8 @@ window.AVELUNE_PRODUCTS = [
   let revealObserver = null;
   function toast(text) { const el=$('toast');el.textContent=text;el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),2600); }
   function focusSearch(){goCatalog();setTimeout(()=>$('search-input').focus({preventScroll:true}),120);}
-  function goCatalog(){document.body.classList.add('catalog-mode');if(location.hash!=='#catalog')history.replaceState(null,'','#catalog');scrollTo(0,0);}
-  function goHome(){document.body.classList.remove('catalog-mode');if(location.hash!=='#top')history.replaceState(null,'','#top');scrollTo(0,0);}
+  function goCatalog(){document.body.classList.add('catalog-mode');if(location.hash!=='#catalog')history.pushState({view:'catalog'},'','#catalog');window.scrollTo(0,0);}
+  function goHome(){document.body.classList.remove('catalog-mode');if(location.hash!=='#top')history.pushState({view:'home'},'','#top');window.scrollTo(0,0);}
   function setTheme(next){ state.theme=next;document.body.dataset.theme=next;storage.set('avelune-v3:theme',next);$('theme-icon').textContent=next==='dark'?'☀':'☾';$('theme-toggle').setAttribute('aria-label',next==='dark'?'Включить светлую тему':'Включить тёмную тему');document.querySelector('meta[name="theme-color"]').content=next==='dark'?'#130e17':'#fbf8f6'; }
   function chooseCategory(cat){state.category=cat;state.favoriteOnly=false;render();goCatalog();}
   function setSearch(value){state.q=value;$('search-input').value=value;render();}
@@ -1061,6 +1102,7 @@ window.AVELUNE_PRODUCTS = [
   }
   function bind(){
     document.body.classList.add('javascript-ready');if(location.hash==='#catalog')document.body.classList.add('catalog-mode');
+    window.addEventListener('popstate',()=>{document.body.classList.toggle('catalog-mode',location.hash==='#catalog');window.scrollTo(0,0);});
     setTheme(state.theme);$('store-filter').insertAdjacentHTML('beforeend',stores.map(s=>`<option value="${escape(s)}">${escape(s)}</option>`).join(''));render();
     $('hero-search-form').addEventListener('submit',e=>{e.preventDefault();setSearch($('hero-search-input').value);goCatalog();});$('hero-explore').addEventListener('click',()=>$('deals').scrollIntoView({behavior:'smooth'}));$('hero-how').addEventListener('click',focusSearch);$('open-full-catalog').addEventListener('click',goCatalog);$('back-home').addEventListener('click',goHome);$('go-search').addEventListener('click',focusSearch);$('editorial-button').addEventListener('click',focusSearch);
     $('theme-toggle').addEventListener('click',()=>setTheme(state.theme==='dark'?'light':'dark'));$('mobile-theme').addEventListener('click',()=>{setTheme(state.theme==='dark'?'light':'dark');closeMenu();});
@@ -1085,7 +1127,7 @@ window.AVELUNE_PRODUCTS = [
     document.addEventListener('click',e=>{const t=e.target.closest('[data-fav],[data-compare],[data-open],[data-cat],[data-category-link],[data-search-term],[data-studio-cat],[data-close],[data-history]');if(t){if(t.hasAttribute('data-history')){showHistory(t.dataset.history);return;}if(t.hasAttribute('data-fav')){toggleFavorite(t.dataset.fav);return;}if(t.hasAttribute('data-compare')){toggleCompare(t.dataset.compare);return;}if(t.hasAttribute('data-open')){openModal(t.dataset.open);return;}if(t.hasAttribute('data-cat')){chooseCategory(t.dataset.cat);return;}if(t.hasAttribute('data-studio-cat')){chooseCategory(t.dataset.studioCat);return;}if(t.hasAttribute('data-category-link')){chooseCategory(t.dataset.categoryLink);return;}if(t.hasAttribute('data-search-term')){setSearch(t.dataset.searchTerm);focusSearch();return;}if(t.hasAttribute('data-close')){closeModal();return;}}if(e.target.id==='modal-overlay')closeModal();});
     document.querySelectorAll('a[href="#catalog"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();goCatalog();closeMenu();}));
     document.querySelectorAll('a[href="#top"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();goHome();closeMenu();}));
-    document.querySelectorAll('a[href="#deals"],a[href="#collections"],a[href="#how"]').forEach(a=>a.addEventListener('click',e=>{if(document.body.classList.contains('catalog-mode')){e.preventDefault();goHome();setTimeout(()=>document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'}),100);closeMenu();}}));
+    document.querySelectorAll('a[href="#deals"],a[href="#finder"],a[href="#collections"],a[href="#how"]').forEach(a=>a.addEventListener('click',e=>{if(document.body.classList.contains('catalog-mode')){e.preventDefault();goHome();setTimeout(()=>document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'}),100);closeMenu();}}));
     document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeMenu();}if(e.key==='/'&&!['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)&&!state.modal){e.preventDefault();focusSearch();}});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
