@@ -1,0 +1,50 @@
+/* AVELUNE V7 • Advanced Catalog / My Beauty Shelf / tactile details */
+/* Catalog controls */
+.v7-filterbar{position:relative;display:grid;grid-template-columns:1fr 1fr auto auto;gap:12px;align-items:end;padding:20px 22px;margin:4px 0 27px;background:linear-gradient(125deg,var(--surface),var(--surface-2));border:1px solid var(--line);border-radius:24px}
+.v7-filterbar::before{content:"";position:absolute;inset:1px;border-radius:inherit;pointer-events:none;background:radial-gradient(circle at 15% 15%,rgba(219,164,203,.045),transparent 45%)}
+.v7-filter-head{grid-column:1/-1;display:flex;align-items:center;gap:10px;justify-content:space-between;font-size:11px;font-weight:750;letter-spacing:1.2px;color:var(--pink);text-transform:uppercase;margin-bottom:2px}
+.v7-filterbar .v7-filter-control{display:flex;flex-direction:column;gap:8px;min-width:0;font-size:10px;font-weight:800;letter-spacing:.9px;color:var(--muted)}
+.v7-filter-control select{width:100%;min-height:47px;padding:0 13px;border:1px solid var(--strong-line);border-radius:13px;background:var(--chip);color:var(--text);font-size:13px;font-weight:600;letter-spacing:0;outline-offset:3px;cursor:pointer}
+.v7-discount-control{display:flex;align-items:center;gap:8px;min-height:47px;background:var(--chip);padding:9px 15px;border:1px solid var(--strong-line);border-radius:13px;color:var(--text);font-size:13px;cursor:pointer;white-space:nowrap}
+.v7-discount-control input{width:17px;height:17px;accent-color:var(--pink);cursor:pointer}
+.v7-clear-button{min-height:47px;padding:11px 16px;border-radius:13px;background:transparent;border:1px solid var(--strong-line);color:var(--text);font-size:12px;font-weight:700;cursor:pointer}
+.v7-clear-button:hover,.v7-filter-control select:focus-visible{border-color:var(--pink)}
+.v7-filter-summary{grid-column:1/-1;color:var(--muted);font-size:11px;letter-spacing:0;line-height:1.55}
+.v7-catalog-label{color:var(--pink)}
+.v7-shelf-root:empty{display:none}
+.v7-shelf-root{position:fixed;z-index:1800;inset:0;display:grid;grid-template-columns:1fr min(520px,100%);pointer-events:auto}
+.v7-shelf-backdrop{grid-column:1;grid-row:1;background:#050208a8;backdrop-filter:blur(11px);border:0;cursor:pointer;animation:v7Fade .25s ease both}
+.v7-shelf-panel{grid-column:2;grid-row:1;overflow-y:auto;overscroll-behavior:contain;scrollbar-color:var(--pink) transparent;background:var(--surface);border-left:1px solid var(--strong-line);height:100dvh;padding:35px 28px max(36px,env(safe-area-inset-bottom,0px));box-shadow:-20px 0 100px #0006;animation:v7Slide .38s cubic-bezier(.2,.9,.25,1) both}
+.v7-shelf-top{display:flex;align-items:start;justify-content:space-between;gap:15px;margin-bottom:30px}
+.v7-shelf-kicker{display:block;font-size:11px;letter-spacing:1.7px;font-weight:800;color:var(--pink);margin-bottom:10px}
+.v7-shelf-top h2{font:normal 45px/.96 Georgia,'Times New Roman',serif;letter-spacing:-1px;margin:0}
+.v7-shelf-top h2 em{color:var(--pink);font-weight:normal}
+.v7-shelf-close{flex:0 0 42px;width:42px;height:42px;border:1px solid var(--strong-line);border-radius:50%;background:var(--chip);color:var(--text);font-size:27px;cursor:pointer}
+.v7-shelf-explain{margin:0 0 24px;font-size:13px;line-height:1.65;color:var(--muted);max-width:420px}
+.v7-shelf-stats{display:flex;gap:13px;padding:17px 20px;background:var(--surface-2);border:1px solid var(--line);border-radius:18px;margin-bottom:20px}
+.v7-shelf-stats div{flex:1}.v7-shelf-stats small{display:block;color:var(--muted);font-size:10px;letter-spacing:.6px;margin-bottom:7px}.v7-shelf-stats strong{font-size:20px}
+.v7-shelf-grid{display:grid;grid-template-columns:1fr;gap:11px}
+.v7-shelf-item{display:grid;grid-template-columns:94px 1fr 40px;gap:12px;align-items:center;padding:10px;background:var(--soft-card);border:1px solid var(--line);border-radius:19px}
+.v7-shelf-image{width:94px;height:94px;overflow:hidden;background:#ebdfe6;border-radius:13px;display:flex;align-items:center;justify-content:center}
+.v7-shelf-image img{width:100%;height:100%;object-fit:contain}
+.v7-shelf-item small{font-size:10px;color:var(--pink);font-weight:750;letter-spacing:.5px}
+.v7-shelf-item h3{font-size:14px;line-height:1.25;margin:6px 0}
+.v7-shelf-item strong{font-size:15px}
+.v7-shelf-open{font-size:12px;color:var(--text);text-decoration:underline;text-decoration-color:var(--pink);text-underline-offset:3px;background:transparent;border:0;padding:8px 0;cursor:pointer;text-align:left}
+.v7-shelf-heart{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--chip);color:#e6a0bc;font-size:21px;cursor:pointer}
+.v7-shelf-empty{min-height:275px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;background:var(--surface-2);border-radius:18px;border:1px solid var(--line)}
+.v7-shelf-empty .v7-empty-heart{font-size:55px;color:var(--pink);animation:v7Heart 4s ease-in-out infinite}
+.v7-shelf-empty h3{font:normal 28px Georgia,serif;margin:8px 0}
+.v7-shelf-empty p{font-size:13px;color:var(--muted);line-height:1.65;max-width:340px}
+.v7-shelf-bottom{margin-top:23px;display:grid;gap:10px}
+.v7-shelf-action{min-height:49px;width:100%;border-radius:999px;background:linear-gradient(105deg,#f1aed1,#c3a7eb);color:#281626;border:0;font-size:13px;font-weight:800;cursor:pointer}
+.v7-shelf-secondary{border:1px solid var(--strong-line);background:var(--chip);color:var(--text);min-height:44px;border-radius:999px;cursor:pointer}
+body.v7-shelf-open{overflow:hidden}
+.v7-filter-tag{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:11px}
+.v7-mobile-guide{display:flex;align-items:center;gap:7px;color:var(--pink);font-size:10px}
+.v7-hero-dust{position:absolute;display:block;border-radius:50%;height:var(--s,5px);width:var(--s,5px);background:#f6bee4a8;box-shadow:0 0 12px 2px #ffc0e56d;top:var(--y,20%);left:var(--x,20%);pointer-events:none;z-index:0;animation:v7Dust var(--dur,8s) ease-in-out infinite;animation-delay:var(--delay,0s)}
+@keyframes v7Fade{from{opacity:0}to{opacity:1}}@keyframes v7Slide{from{opacity:.7;transform:translateX(50px)}to{opacity:1;transform:translateX(0)}}@keyframes v7Heart{50%{transform:scale(1.13);opacity:.7}}@keyframes v7Dust{0%,100%{opacity:.12;transform:translate3d(0,0,0)}50%{opacity:.8;transform:translate3d(14px,-23px,0)}}
+@media (max-width:950px){.v7-filterbar{grid-template-columns:1fr 1fr}.v7-discount-control,.v7-clear-button{align-self:end;justify-content:center}}
+@media (max-width:640px){.v7-filterbar{grid-template-columns:1fr 1fr;gap:9px;padding:14px;margin-bottom:23px;border-radius:17px}.v7-filterbar .v7-filter-control{font-size:9px}.v7-filter-control select{font-size:12px;height:42px;min-height:42px;padding:0 7px}.v7-discount-control{font-size:11px;min-height:43px;padding:7px}.v7-clear-button{min-height:43px;padding:9px;font-size:11px}.v7-filter-summary{font-size:10px}.v7-shelf-root{grid-template-columns:1fr}.v7-shelf-backdrop{display:none}.v7-shelf-panel{grid-column:1;border-left:0;padding:25px 16px max(90px,env(safe-area-inset-bottom,0px))}.v7-shelf-top h2{font-size:40px}.v7-shelf-item{grid-template-columns:77px 1fr 34px;gap:10px}.v7-shelf-image{height:77px;width:77px}.v7-shelf-heart{width:33px;height:33px}.v7-shelf-item h3{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.v7-shelf-panel,.v7-shelf-backdrop,.v7-hero-dust,.v7-shelf-empty .v7-empty-heart{animation:none}}
+body.motion-off .v7-shelf-panel,body.motion-off .v7-hero-dust,body.motion-off .v7-shelf-backdrop{animation:none!important}
