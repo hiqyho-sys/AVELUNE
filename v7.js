@@ -19,6 +19,8 @@
     return nums.length ? Math.min(...nums) : Infinity;
   }
   function productImage(p) {
+    const fromCatalog = window.AVELUNE_TEST?.getImage?.(p.id);
+    if (fromCatalog) return fromCatalog;
     const el = document.querySelector('.product-image-open[data-open="'+p.id+'"] img');
     return el?.src || '';
   }
